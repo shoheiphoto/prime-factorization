@@ -1,44 +1,9 @@
-const generateRandomNumber = () => {
-  return Math.round(Math.random() * 1000);
-};
-
-const write = (targeDOM, innerHTML) => {
-  targeDOM.innerHTML = innerHTML;
-};
-
-const isEven = num => {
-  return num % 2 === 0;
-};
-
-const isPrimeNumber = num => {
-  if (num === 2) return true;
-  if (num % 2 === 0) return false;
-  for (i = 2; i < num; i++) {
-    if (num % i === 0) return false;
-  }
-  return true;
-};
-
-const primeFactorization = num => {
-  const primeFactors = [];
-  if (num === 1) return [1];
-
-  for (i = 2; i <= num; i++) {
-    while (num % i === 0) {
-      primeFactors.push(i);
-      num /= i;
-    }
-  }
-  return primeFactors;
-};
-
-const generatePrimeFactorizationResultMessage = primeNumbers => {
-  return primeNumbers.map(function (num, index) {
-    const stringNum = num.toString();
-    if (index === 0) return stringNum;
-    return ' x ' + stringNum;
-  }).concat('となりますね。').join('');
-};
+import {generateRandomNumber} from './lib/generateRandomNumber.js';
+import {write} from './lib/write.js';
+import {isEven} from './lib/isEven.js';
+import {isPrimeNumber} from './lib/isPrimeNumber.js';
+import {primeFactorization} from './lib/primeFactorization.js';
+import {generatePrimeFactorizationResultMessage} from './lib/generatePrimeFactorizationResultMessage.js';
 
 const main = () => {
   const num = generateRandomNumber();
