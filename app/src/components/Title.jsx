@@ -1,5 +1,5 @@
 export const Title = (props) => {
   return (
-    <h1>{props.Title}</h1>
+    <h1>{props.title}</h1>
   )
 };
